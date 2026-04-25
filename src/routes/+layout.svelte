@@ -8,4 +8,14 @@
 	<link rel="icon" href={favicon} />
 </svelte:head>
 
+<nav>
+	<p>PlainPlates</p>
+	<a href="/">Home</a>
+	<a href="/recipes">Recipes</a>
+</nav>
+
 {@render children()}
+
+<footer>
+	<strong>PlainPlates</strong> - <i>Simple recipes made for real people.</i>
+</footer>

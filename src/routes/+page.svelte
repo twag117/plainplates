@@ -5,7 +5,7 @@
 
 <h1>Welcome to PlainPlates!</h1>
 {#each data.recipes as r}
-  <p>ID: {r.id} - {r.name}</p>  
+  <p><a href="/recipes/{r.slug}">ID: {r.id}</a> - {r.name}</p>  
 {/each}
 
 
