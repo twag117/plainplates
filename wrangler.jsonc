@@ -1,12 +1,17 @@
 {
-  "name": "plainplates",
-  "compatibility_date": "2025-01-01",
-  "pages_build_output_dir": ".svelte-kit/cloudflare",
-  "d1_databases": [
-    {
-      "binding": "DB",
-      "database_name": "plainplates-db",
-      "database_id": "15f6b1b8-2792-4fb7-9099-e013a29810c3"
-    }
-  ]
+    "name": "plainplates",
+    "compatibility_date": "2025-01-01",
+    "compatibility_flags": ["nodejs_compat"],
+    "main": ".svelte-kit/cloudflare/_worker.js",
+    "assets": {
+        "directory": ".svelte-kit/cloudflare",
+        "binding": "ASSETS"
+    },
+    "d1_databases": [
+        {
+            "binding": "DB",
+            "database_name": "plainplates-db",
+            "database_id": "15f6b1b8-2792-4fb7-9099-e013a29810c3"
+        }
+    ]
 }
