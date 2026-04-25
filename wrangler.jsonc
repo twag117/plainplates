@@ -1,0 +1,12 @@
+{
+  "name": "plainplates",
+  "compatibility_date": "2025-01-01",
+  "pages_build_output_dir": ".svelte-kit/cloudflare",
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "plainplates-db",
+      "database_id": "15f6b1b8-2792-4fb7-9099-e013a29810c3"
+    }
+  ]
+}
