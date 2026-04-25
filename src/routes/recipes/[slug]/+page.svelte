@@ -4,9 +4,7 @@
 
 
 <h1>Welcome to PlainPlates!</h1>
-{#each data.recipes as r}
-  <p>ID: {r.id} - {r.name}</p>  
-{/each}
+<p>ID: {data.item.id} - {data.item.name}</p>  
 
 
 <style>
