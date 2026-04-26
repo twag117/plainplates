@@ -5,10 +5,11 @@
 </script>
 
 <h1>Welcome to PlainPlates!</h1>
+<hr>
 <RecipesList recipes={data.recipes} />
 
 <style>
-  h1 {
-    background: red;
+  hr {
+    border-color: var(--color-accent);
   }
 </style>

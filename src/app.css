@@ -1,0 +1,13 @@
+:root {
+  --color-background: #1e2814;
+  --color-accent: #32e119;
+  --font-body:  "Lucida Console", "Courier New", monospace;
+  /* --font-color: #f2f6ee; */
+  --font-color: #e6eedd;
+}
+
+body {
+  background-color: var(--color-background);
+  font-family: var(--font-body);
+  color: var(--font-color);
+}
