@@ -37,5 +37,6 @@
 	.title-head {
 		padding: 5px 0;
 		color: var(--font-color);
+		text-decoration: none;
 	}
 </style>
