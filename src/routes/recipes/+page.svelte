@@ -1,9 +1,10 @@
 <script>
+  import RecipesList from "$lib/RecipesList.svelte"
   let { data } = $props()
 </script>
 
 
-<h1>Welcome to PlainPlates!</h1>
+<h1>Explore PlainPlates!</h1>
 
 <hr>
 <h3>SEARCH:</h3>
@@ -14,9 +15,8 @@
 </form>
 <hr>
 
-{#each data.recipes as r}
-  <p><a href="/recipes/{r.slug}">ID: {r.id}</a> - {r.name}</p>  
-{/each}
+<RecipesList recipes={data.recipes} />
+
 
 
 <style>
