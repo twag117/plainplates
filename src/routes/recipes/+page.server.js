@@ -2,28 +2,39 @@ export async function load({ platform, url }) {
   // do server stuff here
   const search = await url.searchParams.get('search')
   const category = await url.searchParams.get('category')
+  const sort = await url.searchParams.get('sort')
+  let sql = 'SELECT * FROM recipes'
+  let values = []
   let result
 
   if (search && category) {
-    result = await platform.env.DB.prepare(
-      "SELECT * FROM recipes WHERE category = ? AND (name LIKE ? OR description LIKE ?) LIMIT 100"
-    ).bind(`${category}`, `%${search}%`, `%${search}%`).all()
+    sql += ' WHERE category = ? AND (name LIKE ? OR description LIKE ?)'
+    values.push(category, `%${search}%`, `%${search}%`)
   } else if (search) {
-    result = await platform.env.DB.prepare(
-      "SELECT * FROM recipes WHERE name LIKE ? OR description LIKE ? LIMIT 100"
-    ).bind(`%${search}%`, `%${search}%`).all()
+    sql += ' WHERE name LIKE ? OR description LIKE ?'
+    values.push(`%${search}%`, `%${search}%`)
   } else if (category) {
-    result = await platform.env.DB.prepare(
-      "SELECT * FROM recipes WHERE category = ? LIMIT 100"
-    ).bind(`${category}`).all()
-  } else {
-    result = await platform.env.DB.prepare("SELECT * FROM recipes LIMIT 100").all()   
+    sql += ' WHERE category = ?'
+    values.push(category)
   }
+
+  if (sort === 'new') {
+    sql += ' ORDER BY id DESC'
+  } else if (sort === 'time') {
+    sql += ' ORDER BY cook_time ASC'
+  } else {
+    sql += ' ORDER BY name ASC'
+  }
+
+  sql += ' LIMIT 100'
+
+  result = await platform.env.DB.prepare(sql).bind(...values).all()
 
 
   return {
     // return data here
     recipes: result.results,
-    categoryParam: category
+    categoryParam: category,
+    sortParam: sort
   }
 }
