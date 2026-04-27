@@ -15,12 +15,13 @@
     justify-content: flex-start;
     flex-direction: column;
 
-    border: 1px solid red;
+    border: 1px solid var(--color-accent);
     padding: 5px 5px;
 		text-decoration: none;
     max-width: 300px;
     margin-bottom: 5px;
     color: var(--font-color);
+    background-color: #a0b4b41f;
   }
 
   .recipe-title {

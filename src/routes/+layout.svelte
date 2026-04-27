@@ -11,8 +11,8 @@
 <nav>
 	<a href="/" class="title-head">PlainPlates</a>
 	<div>
-		<a href="/">Home</a>
-		<a href="/recipes">Recipes</a>
+		<a class="nav-item" href="/">Home</a>
+		<a class="nav-item" href="/recipes">Recipes</a>
 	</div>
 </nav>
 
@@ -38,5 +38,10 @@
 		padding: 5px 0;
 		color: var(--font-color);
 		text-decoration: none;
+	}
+
+	.nav-item {
+		text-decoration: none;
+		color: var(--color-accent);
 	}
 </style>

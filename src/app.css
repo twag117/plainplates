@@ -1,6 +1,8 @@
 :root {
-  --color-background: #1e2814;
-  --color-accent: #32e119;
+  /* --color-background: #1e2814; */
+  --color-background: #141919;
+  /* --color-accent: #32e119; */
+  --color-accent: #f0c800;
   --font-body:  "Lucida Console", "Courier New", monospace;
   /* --font-color: #f2f6ee; */
   --font-color: #e6eedd;
